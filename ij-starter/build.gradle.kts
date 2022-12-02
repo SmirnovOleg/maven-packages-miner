@@ -3,7 +3,7 @@ version = rootProject.version
 
 dependencies {
     implementation(rootProject.libs.kotlin.argparser)
-    implementation(project(":ij-core"))
+    implementation(project(":deps-extractor"))
 }
 
 tasks {
@@ -13,9 +13,7 @@ tasks {
 
         args = listOfNotNull(
             // Define your application starter command name
-            "ij-headless-greeting",
-            // Define args for your application
-            message?.let { "--message=$it" }
+            "dependencies-extractor",
         )
 
         jvmArgs = listOf(
